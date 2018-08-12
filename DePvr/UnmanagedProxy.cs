@@ -6,7 +6,7 @@ namespace DePvr
     /// <summary>
     /// Unmanaged-to-Managed proxy class for DeEtc.dll
     /// </summary>
-    internal static class DeEtc
+    internal static class UnmanagedProxy
     {
         /// <summary>
         /// Loads a PVR texture from a file.

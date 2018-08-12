@@ -23,6 +23,7 @@
     <ProjectGuid>{6B036E70-9CCE-43E9-B8F0-F7F324334B67}</ProjectGuid>
     <RootNamespace>DePvr</RootNamespace>
     <WindowsTargetPlatformVersion>10.0.17134.0</WindowsTargetPlatformVersion>
+    <ProjectName>DePvr.Unmanaged</ProjectName>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
@@ -146,10 +147,10 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="DeEtc.cpp" />
+    <ClCompile Include="DePvr.Unmanaged.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="DeEtc.h" />
+    <ClInclude Include="DePvr.Unmanaged.h" />
     <ClInclude Include="include\PVRTArray.h" />
     <ClInclude Include="include\PVRTDecompress.h" />
     <ClInclude Include="include\PVRTError.h" />

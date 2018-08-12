@@ -19,17 +19,17 @@ namespace DePvr
         /// <summary>
         /// Gets the width of the texture.
         /// </summary>
-        public uint Width => DeEtc.GetWidth(_pointer);
+        public uint Width => UnmanagedProxy.GetWidth(_pointer);
 
         /// <summary>
         /// Gets the height of the texture.
         /// </summary>
-        public uint Height => DeEtc.GetHeight(_pointer);
+        public uint Height => UnmanagedProxy.GetHeight(_pointer);
 
         /// <summary>
         /// Gets the size of the texture binary.
         /// </summary>
-        public uint DataSize => DeEtc.GetDataSize(_pointer);
+        public uint DataSize => UnmanagedProxy.GetDataSize(_pointer);
 
         /// <summary>
         /// Gets the texture binary.
@@ -40,7 +40,7 @@ namespace DePvr
             {
                 var length = (int) DataSize;
                 var bytes = new byte[length];
-                var pointer = DeEtc.GetDataPointer(_pointer);
+                var pointer = UnmanagedProxy.GetDataPointer(_pointer);
 
                 Marshal.Copy(pointer, bytes, 0, length);
                 return bytes;
@@ -69,7 +69,7 @@ namespace DePvr
             }
 
             var fullPath = Path.GetFullPath(path);
-            var pointer = DeEtc.LoadFromFile(path);
+            var pointer = UnmanagedProxy.LoadFromFile(path);
             var pvr = new Pvr(pointer);
 
             return pvr;
@@ -86,7 +86,7 @@ namespace DePvr
             var srcPointer = Marshal.AllocHGlobal(length);
             Marshal.Copy(bytes, 0, srcPointer, length);
 
-            var pointer = DeEtc.LoadFromMemory(srcPointer);
+            var pointer = UnmanagedProxy.LoadFromMemory(srcPointer);
             var pvr = new Pvr(pointer);
 
             return pvr;
@@ -112,7 +112,7 @@ namespace DePvr
         /// <returns>Whether it was flipped successfully.</returns>
         public bool FlipVertical()
         {
-            return DeEtc.FlipVertical(_pointer);
+            return UnmanagedProxy.FlipVertical(_pointer);
         }
 
         /// <summary>
@@ -121,7 +121,7 @@ namespace DePvr
         /// <returns>Whether it was flipped successfully.</returns>
         public bool FlipHorizontal()
         {
-            return DeEtc.FlipHorizontal(_pointer);
+            return UnmanagedProxy.FlipHorizontal(_pointer);
         }
 
         /// <summary>
@@ -179,7 +179,7 @@ namespace DePvr
         /// </summary>
         public void Dispose()
         {
-            DeEtc.Dispose(_pointer);
+            UnmanagedProxy.Dispose(_pointer);
         }
     }
 }

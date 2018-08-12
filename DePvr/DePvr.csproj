@@ -40,16 +40,16 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="DeEtc.cs" />
+    <Compile Include="UnmanagedProxy.cs" />
     <Compile Include="Pvr.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="..\DeEtc\bin\$(Platform)\$(Configuration)\DeEtc.dll">
-      <Link>DeEtc.dll</Link>
+    <Content Include="..\DePvr.Unmanaged\bin\$(Platform)\$(Configuration)\DePvr.Unmanaged.dll">
+      <Link>DePvr.Unmanaged.dll</Link>
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="..\DeEtc\lib\$(Platform)\PVRTexLib.dll">
+    <Content Include="..\DePvr.Unmanaged\lib\$(Platform)\PVRTexLib.dll">
       <Link>PVRTexLib.dll</Link>
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
