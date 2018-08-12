@@ -66,5 +66,11 @@ namespace DePvr.Tests
             _pvr.FlipVertical();
             _pvr.Export(TestFlipExportPath);
         }
+
+        [TestCleanup]
+        public void Cleanup()
+        {
+            _pvr.Dispose();
+        }
     }
 }

@@ -6,7 +6,7 @@ using System.Runtime.InteropServices;
 
 namespace DePvr
 {
-    public class Pvr
+    public class Pvr : IDisposable
     {
         private IntPtr _pointer;
 
@@ -112,6 +112,11 @@ namespace DePvr
             {
                 bitmap.Save(path, format);
             }
+        }
+
+        public void Dispose()
+        {
+            DeEtc.Dispose(_pointer);
         }
     }
 }

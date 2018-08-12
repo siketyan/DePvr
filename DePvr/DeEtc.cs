@@ -31,5 +31,8 @@ namespace DePvr
 
         [DllImport("DeEtc.dll", CallingConvention = CallingConvention.Cdecl)]
         public static extern IntPtr GetDataPointer(IntPtr pointer);
+
+        [DllImport("DeEtc.dll", CallingConvention = CallingConvention.Cdecl)]
+        public static extern void Dispose(IntPtr pointer);
     }
 }
