@@ -16,6 +16,8 @@ extern "C"
 	DLLEXPORT pvrtexture::CPVRTexture* LoadPvr(char* path);
     DLLEXPORT bool FlipPvrVertical(pvrtexture::CPVRTexture* pvr);
     DLLEXPORT bool FlipPvrHorizontal(pvrtexture::CPVRTexture* pvr);
+    DLLEXPORT unsigned int GetWidth(pvrtexture::CPVRTexture* pvr);
+    DLLEXPORT unsigned int GetHeight(pvrtexture::CPVRTexture* pvr);
     DLLEXPORT unsigned int GetDataSize(pvrtexture::CPVRTexture* pvr);
     DLLEXPORT void* GetDataPointer(pvrtexture::CPVRTexture* pvr);
 }

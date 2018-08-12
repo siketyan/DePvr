@@ -1,5 +1,7 @@
 #include "DeEtc.h"
 
+pvrtexture::CPVRTexture _pvr;
+
 pvrtexture::CPVRTexture* LoadPvr(char* path)
 {
 	pvrtexture::CPVRTexture pvr(path);
@@ -10,7 +12,8 @@ pvrtexture::CPVRTexture* LoadPvr(char* path)
 		ePVRTCSpacelRGB
 	);
 
-	return &pvr;
+    _pvr = pvr;
+	return &_pvr;
 }
 
 bool FlipPvrVertical(pvrtexture::CPVRTexture* pvr)
@@ -21,6 +24,16 @@ bool FlipPvrVertical(pvrtexture::CPVRTexture* pvr)
 bool FlipPvrHorizontal(pvrtexture::CPVRTexture* pvr)
 {
     return pvrtexture::Flip(*pvr, ePVRTAxisX);
+}
+
+unsigned int GetWidth(pvrtexture::CPVRTexture* pvr)
+{
+    return pvr->getWidth();
+}
+
+unsigned int GetHeight(pvrtexture::CPVRTexture* pvr)
+{
+    return pvr->getHeight();
 }
 
 unsigned int GetDataSize(pvrtexture::CPVRTexture* pvr)
