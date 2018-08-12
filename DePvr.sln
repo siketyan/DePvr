@@ -3,6 +3,15 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.27703.2047
 MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{13CC0940-2C0C-419C-9B9F-791B5D83241F}"
+	ProjectSection(SolutionItems) = preProject
+		.editorconfig = .editorconfig
+		.gitignore = .gitignore
+		LICENSE.md = LICENSE.md
+		LICENSE_POWERVR_TOOLS.txt = LICENSE_POWERVR_TOOLS.txt
+		README.md = README.md
+	EndProjectSection
+EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DePvr", "DePvr\DePvr.csproj", "{4149BF2C-B2A6-475E-B63D-94CA38080952}"
 	ProjectSection(ProjectDependencies) = postProject
 		{6B036E70-9CCE-43E9-B8F0-F7F324334B67} = {6B036E70-9CCE-43E9-B8F0-F7F324334B67}
@@ -10,13 +19,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DePvr", "DePvr\DePvr.csproj
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DePvr.Tests", "DePvr.Tests\DePvr.Tests.csproj", "{E495AC26-76CC-4CEE-BAA4-FB1F1C2E1E1C}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{13CC0940-2C0C-419C-9B9F-791B5D83241F}"
-	ProjectSection(SolutionItems) = preProject
-		.editorconfig = .editorconfig
-		.gitignore = .gitignore
-	EndProjectSection
-EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "DeEtc", "DeEtc\DeEtc.vcxproj", "{6B036E70-9CCE-43E9-B8F0-F7F324334B67}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "DePvr.Unmanaged", "DePvr.Unmanaged\DePvr.Unmanaged.vcxproj", "{6B036E70-9CCE-43E9-B8F0-F7F324334B67}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
