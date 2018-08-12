@@ -14,7 +14,7 @@ namespace DePvr
         /// <summary>
         /// The pointer to the texture.
         /// </summary>
-        private IntPtr _pointer;
+        private readonly IntPtr _pointer;
 
         /// <summary>
         /// Gets the width of the texture.
