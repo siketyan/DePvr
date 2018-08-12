@@ -6,33 +6,33 @@ namespace DePvr
     internal static class DeEtc
     {
         [DllImport("DeEtc.dll", CallingConvention = CallingConvention.Cdecl)]
-        public static extern IntPtr LoadFromFile(string path);
+        internal static extern IntPtr LoadFromFile(string path);
 
         [DllImport("DeEtc.dll", CallingConvention = CallingConvention.Cdecl)]
-        public static extern IntPtr LoadFromMemory(IntPtr pointer);
+        internal static extern IntPtr LoadFromMemory(IntPtr pointer);
 
         [DllImport("DeEtc.dll", CallingConvention = CallingConvention.Cdecl)]
-        public static extern bool Decode(IntPtr pointer);
+        internal static extern bool Decode(IntPtr pointer);
 
         [DllImport("DeEtc.dll", CallingConvention = CallingConvention.Cdecl)]
-        public static extern bool FlipVertical(IntPtr pointer);
+        internal static extern bool FlipVertical(IntPtr pointer);
 
         [DllImport("DeEtc.dll", CallingConvention = CallingConvention.Cdecl)]
-        public static extern bool FlipHorizontal(IntPtr pointer);
+        internal static extern bool FlipHorizontal(IntPtr pointer);
 
         [DllImport("DeEtc.dll", CallingConvention = CallingConvention.Cdecl)]
-        public static extern uint GetWidth(IntPtr pointer);
+        internal static extern uint GetWidth(IntPtr pointer);
 
         [DllImport("DeEtc.dll", CallingConvention = CallingConvention.Cdecl)]
-        public static extern uint GetHeight(IntPtr pointer);
+        internal static extern uint GetHeight(IntPtr pointer);
 
         [DllImport("DeEtc.dll", CallingConvention = CallingConvention.Cdecl)]
-        public static extern uint GetDataSize(IntPtr pointer);
+        internal static extern uint GetDataSize(IntPtr pointer);
 
         [DllImport("DeEtc.dll", CallingConvention = CallingConvention.Cdecl)]
-        public static extern IntPtr GetDataPointer(IntPtr pointer);
+        internal static extern IntPtr GetDataPointer(IntPtr pointer);
 
         [DllImport("DeEtc.dll", CallingConvention = CallingConvention.Cdecl)]
-        public static extern void Dispose(IntPtr pointer);
+        internal static extern void Dispose(IntPtr pointer);
     }
 }
