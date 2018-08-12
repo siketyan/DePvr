@@ -4,6 +4,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 VisualStudioVersion = 15.0.27703.2047
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DePvr", "DePvr\DePvr.csproj", "{4149BF2C-B2A6-475E-B63D-94CA38080952}"
+	ProjectSection(ProjectDependencies) = postProject
+		{6B036E70-9CCE-43E9-B8F0-F7F324334B67} = {6B036E70-9CCE-43E9-B8F0-F7F324334B67}
+	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DePvr.Tests", "DePvr.Tests\DePvr.Tests.csproj", "{E495AC26-76CC-4CEE-BAA4-FB1F1C2E1E1C}"
 EndProject
@@ -12,6 +15,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 		.editorconfig = .editorconfig
 		.gitignore = .gitignore
 	EndProjectSection
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "DeEtc", "DeEtc\DeEtc.vcxproj", "{6B036E70-9CCE-43E9-B8F0-F7F324334B67}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -37,6 +42,14 @@ Global
 		{E495AC26-76CC-4CEE-BAA4-FB1F1C2E1E1C}.Release|x64.Build.0 = Release|x64
 		{E495AC26-76CC-4CEE-BAA4-FB1F1C2E1E1C}.Release|x86.ActiveCfg = Release|x86
 		{E495AC26-76CC-4CEE-BAA4-FB1F1C2E1E1C}.Release|x86.Build.0 = Release|x86
+		{6B036E70-9CCE-43E9-B8F0-F7F324334B67}.Debug|x64.ActiveCfg = Debug|x64
+		{6B036E70-9CCE-43E9-B8F0-F7F324334B67}.Debug|x64.Build.0 = Debug|x64
+		{6B036E70-9CCE-43E9-B8F0-F7F324334B67}.Debug|x86.ActiveCfg = Debug|Win32
+		{6B036E70-9CCE-43E9-B8F0-F7F324334B67}.Debug|x86.Build.0 = Debug|Win32
+		{6B036E70-9CCE-43E9-B8F0-F7F324334B67}.Release|x64.ActiveCfg = Release|x64
+		{6B036E70-9CCE-43E9-B8F0-F7F324334B67}.Release|x64.Build.0 = Release|x64
+		{6B036E70-9CCE-43E9-B8F0-F7F324334B67}.Release|x86.ActiveCfg = Release|Win32
+		{6B036E70-9CCE-43E9-B8F0-F7F324334B67}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
