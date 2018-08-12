@@ -13,11 +13,11 @@
 
 extern "C"
 {
-	DLLEXPORT pvrtexture::CPVRTexture* LoadPvrFromFile(char* path);
-    DLLEXPORT pvrtexture::CPVRTexture* LoadPvrFromMemory(void* pointer);
-    DLLEXPORT bool TranscodePvr(pvrtexture::CPVRTexture* pointer);
-    DLLEXPORT bool FlipPvrVertical(pvrtexture::CPVRTexture* pvr);
-    DLLEXPORT bool FlipPvrHorizontal(pvrtexture::CPVRTexture* pvr);
+	DLLEXPORT pvrtexture::CPVRTexture* LoadFromFile(char* path);
+    DLLEXPORT pvrtexture::CPVRTexture* LoadFromMemory(void* pointer);
+    DLLEXPORT bool Decode(pvrtexture::CPVRTexture* pointer);
+    DLLEXPORT bool FlipVertical(pvrtexture::CPVRTexture* pvr);
+    DLLEXPORT bool FlipHorizontal(pvrtexture::CPVRTexture* pvr);
     DLLEXPORT unsigned int GetWidth(pvrtexture::CPVRTexture* pvr);
     DLLEXPORT unsigned int GetHeight(pvrtexture::CPVRTexture* pvr);
     DLLEXPORT unsigned int GetDataSize(pvrtexture::CPVRTexture* pvr);

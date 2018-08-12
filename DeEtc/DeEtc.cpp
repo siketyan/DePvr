@@ -2,25 +2,25 @@
 
 pvrtexture::CPVRTexture _pvr;
 
-pvrtexture::CPVRTexture* LoadPvrFromFile(char* path)
+pvrtexture::CPVRTexture* LoadFromFile(char* path)
 {
 	pvrtexture::CPVRTexture pvr(path);
-    TranscodePvr(&pvr);
+    Decode(&pvr);
 
     _pvr = pvr;
 	return &_pvr;
 }
 
-pvrtexture::CPVRTexture* LoadPvrFromMemory(void* pointer)
+pvrtexture::CPVRTexture* LoadFromMemory(void* pointer)
 {
     pvrtexture::CPVRTexture pvr(pointer);
-    TranscodePvr(&pvr);
+    Decode(&pvr);
 
     _pvr = pvr;
     return &_pvr;
 }
 
-bool TranscodePvr(pvrtexture::CPVRTexture* pvr)
+bool Decode(pvrtexture::CPVRTexture* pvr)
 {
     return pvrtexture::Transcode(
         *pvr,
@@ -30,12 +30,12 @@ bool TranscodePvr(pvrtexture::CPVRTexture* pvr)
     );
 }
 
-bool FlipPvrVertical(pvrtexture::CPVRTexture* pvr)
+bool FlipVertical(pvrtexture::CPVRTexture* pvr)
 {
     return pvrtexture::Flip(*pvr, ePVRTAxisY);
 }
 
-bool FlipPvrHorizontal(pvrtexture::CPVRTexture* pvr)
+bool FlipHorizontal(pvrtexture::CPVRTexture* pvr)
 {
     return pvrtexture::Flip(*pvr, ePVRTAxisX);
 }

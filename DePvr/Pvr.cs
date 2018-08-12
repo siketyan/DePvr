@@ -40,7 +40,7 @@ namespace DePvr
             }
 
             var fullPath = Path.GetFullPath(path);
-            var pointer = DeEtc.LoadPvrFromFile(path);
+            var pointer = DeEtc.LoadFromFile(path);
             var pvr = new Pvr(pointer);
 
             return pvr;
@@ -52,7 +52,7 @@ namespace DePvr
             var srcPointer = Marshal.AllocHGlobal(length);
             Marshal.Copy(bytes, 0, srcPointer, length);
 
-            var pointer = DeEtc.LoadPvrFromMemory(srcPointer);
+            var pointer = DeEtc.LoadFromMemory(srcPointer);
             var pvr = new Pvr(pointer);
 
             return pvr;
@@ -69,12 +69,12 @@ namespace DePvr
 
         public bool FlipVertical()
         {
-            return DeEtc.FlipPvrVertical(_pointer);
+            return DeEtc.FlipVertical(_pointer);
         }
 
         public bool FlipHorizontal()
         {
-            return DeEtc.FlipPvrHorizontal(_pointer);
+            return DeEtc.FlipHorizontal(_pointer);
         }
 
         public Bitmap ToBitmap()

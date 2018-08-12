@@ -6,16 +6,19 @@ namespace DePvr
     public static class DeEtc
     {
         [DllImport("DeEtc.dll", CallingConvention = CallingConvention.Cdecl)]
-        public static extern IntPtr LoadPvrFromFile(string path);
+        public static extern IntPtr LoadFromFile(string path);
 
         [DllImport("DeEtc.dll", CallingConvention = CallingConvention.Cdecl)]
-        public static extern IntPtr LoadPvrFromMemory(IntPtr pointer);
+        public static extern IntPtr LoadFromMemory(IntPtr pointer);
 
         [DllImport("DeEtc.dll", CallingConvention = CallingConvention.Cdecl)]
-        public static extern bool FlipPvrVertical(IntPtr pointer);
+        public static extern bool Decode(IntPtr pointer);
 
         [DllImport("DeEtc.dll", CallingConvention = CallingConvention.Cdecl)]
-        public static extern bool FlipPvrHorizontal(IntPtr pointer);
+        public static extern bool FlipVertical(IntPtr pointer);
+
+        [DllImport("DeEtc.dll", CallingConvention = CallingConvention.Cdecl)]
+        public static extern bool FlipHorizontal(IntPtr pointer);
 
         [DllImport("DeEtc.dll", CallingConvention = CallingConvention.Cdecl)]
         public static extern uint GetWidth(IntPtr pointer);
