@@ -4,7 +4,7 @@ using System.Runtime.InteropServices;
 namespace DePvr
 {
     /// <summary>
-    /// Unmanaged-to-Managed proxy class for DeEtc.dll
+    /// Unmanaged-to-Managed proxy class for DePvr.Unmanaged.dll
     /// </summary>
     internal static class UnmanagedProxy
     {
@@ -13,7 +13,7 @@ namespace DePvr
         /// </summary>
         /// <param name="path">A file to load from.</param>
         /// <returns>A pointer of the loaded texture.</returns>
-        [DllImport("DeEtc.dll", CallingConvention = CallingConvention.Cdecl)]
+        [DllImport("DePvr.Unmanaged.dll", CallingConvention = CallingConvention.Cdecl)]
         internal static extern IntPtr LoadFromFile(string path);
 
         /// <summary>
@@ -21,7 +21,7 @@ namespace DePvr
         /// </summary>
         /// <param name="pointer">A pointer of the byte array to load from.</param>
         /// <returns>A pointer of the loaded texture.</returns>
-        [DllImport("DeEtc.dll", CallingConvention = CallingConvention.Cdecl)]
+        [DllImport("DePvr.Unmanaged.dll", CallingConvention = CallingConvention.Cdecl)]
         internal static extern IntPtr LoadFromMemory(IntPtr pointer);
 
         /// <summary>
@@ -30,7 +30,7 @@ namespace DePvr
         /// </summary>
         /// <param name="pointer">A pointer of the texture to decode.</param>
         /// <returns>Whether it was decoded successfully.</returns>
-        [DllImport("DeEtc.dll", CallingConvention = CallingConvention.Cdecl)]
+        [DllImport("DePvr.Unmanaged.dll", CallingConvention = CallingConvention.Cdecl)]
         internal static extern bool Decode(IntPtr pointer);
 
         /// <summary>
@@ -38,7 +38,7 @@ namespace DePvr
         /// </summary>
         /// <param name="pointer">A pointer of the texture to flip.</param>
         /// <returns>Whether it was flipped successfully.</returns>
-        [DllImport("DeEtc.dll", CallingConvention = CallingConvention.Cdecl)]
+        [DllImport("DePvr.Unmanaged.dll", CallingConvention = CallingConvention.Cdecl)]
         internal static extern bool FlipVertical(IntPtr pointer);
 
         /// <summary>
@@ -46,7 +46,7 @@ namespace DePvr
         /// </summary>
         /// <param name="pointer">A pointer of the texture to flip.</param>
         /// <returns>Whether it was flipped successfully.</returns>
-        [DllImport("DeEtc.dll", CallingConvention = CallingConvention.Cdecl)]
+        [DllImport("DePvr.Unmanaged.dll", CallingConvention = CallingConvention.Cdecl)]
         internal static extern bool FlipHorizontal(IntPtr pointer);
 
         /// <summary>
@@ -54,7 +54,7 @@ namespace DePvr
         /// </summary>
         /// <param name="pointer">A pointer of the texture.</param>
         /// <returns>The width of the texture.</returns>
-        [DllImport("DeEtc.dll", CallingConvention = CallingConvention.Cdecl)]
+        [DllImport("DePvr.Unmanaged.dll", CallingConvention = CallingConvention.Cdecl)]
         internal static extern uint GetWidth(IntPtr pointer);
 
         /// <summary>
@@ -62,7 +62,7 @@ namespace DePvr
         /// </summary>
         /// <param name="pointer">A pointer of the texture.</param>
         /// <returns>The height of the texture.</returns>
-        [DllImport("DeEtc.dll", CallingConvention = CallingConvention.Cdecl)]
+        [DllImport("DePvr.Unmanaged.dll", CallingConvention = CallingConvention.Cdecl)]
         internal static extern uint GetHeight(IntPtr pointer);
 
         /// <summary>
@@ -70,7 +70,7 @@ namespace DePvr
         /// </summary>
         /// <param name="pointer">A pointer of the texture.</param>
         /// <returns>The size of the texture binary.</returns>
-        [DllImport("DeEtc.dll", CallingConvention = CallingConvention.Cdecl)]
+        [DllImport("DePvr.Unmanaged.dll", CallingConvention = CallingConvention.Cdecl)]
         internal static extern uint GetDataSize(IntPtr pointer);
 
         /// <summary>
@@ -78,14 +78,14 @@ namespace DePvr
         /// </summary>
         /// <param name="pointer">A pointer of the texture.</param>
         /// <returns>The pointer of the texture binary.</returns>
-        [DllImport("DeEtc.dll", CallingConvention = CallingConvention.Cdecl)]
+        [DllImport("DePvr.Unmanaged.dll", CallingConvention = CallingConvention.Cdecl)]
         internal static extern IntPtr GetDataPointer(IntPtr pointer);
 
         /// <summary>
         /// Free the memory space used by the texture.
         /// </summary>
         /// <param name="pointer">A pointer of the texture.</param>
-        [DllImport("DeEtc.dll", CallingConvention = CallingConvention.Cdecl)]
+        [DllImport("DePvr.Unmanaged.dll", CallingConvention = CallingConvention.Cdecl)]
         internal static extern void Dispose(IntPtr pointer);
     }
 }
