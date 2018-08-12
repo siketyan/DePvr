@@ -3,7 +3,7 @@ using System.Runtime.InteropServices;
 
 namespace DePvr
 {
-    public static class DeEtc
+    internal static class DeEtc
     {
         [DllImport("DeEtc.dll", CallingConvention = CallingConvention.Cdecl)]
         public static extern IntPtr LoadFromFile(string path);
