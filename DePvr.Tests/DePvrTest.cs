@@ -1,4 +1,5 @@
 using System;
+using System.IO;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace DePvr.Tests
@@ -13,9 +14,17 @@ namespace DePvr.Tests
         private Pvr _pvr;
 
         [TestInitialize]
-        public void LoadPvrTest()
+        public void LoadPvrFromFileTest()
         {
-            _pvr = Pvr.Load(TestPvrPath);
+            _pvr = Pvr.LoadFromFile(TestPvrPath);
+        }
+
+        [TestMethod]
+        public void LoadPvrFromMemoryTest()
+        {
+            _pvr = Pvr.LoadFromBytes(
+                File.ReadAllBytes(TestPvrPath)
+            );
         }
 
         [TestMethod]

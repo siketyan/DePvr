@@ -6,7 +6,10 @@ namespace DePvr
     public static class DeEtc
     {
         [DllImport("DeEtc.dll", CallingConvention = CallingConvention.Cdecl)]
-        public static extern IntPtr LoadPvr(string path);
+        public static extern IntPtr LoadPvrFromFile(string path);
+
+        [DllImport("DeEtc.dll", CallingConvention = CallingConvention.Cdecl)]
+        public static extern IntPtr LoadPvrFromMemory(IntPtr pointer);
 
         [DllImport("DeEtc.dll", CallingConvention = CallingConvention.Cdecl)]
         public static extern bool FlipPvrVertical(IntPtr pointer);

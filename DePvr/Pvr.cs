@@ -32,7 +32,7 @@ namespace DePvr
             _pointer = pointer;
         }
 
-        public static Pvr Load(string path)
+        public static Pvr LoadFromFile(string path)
         {
             if (!File.Exists(path))
             {
@@ -40,10 +40,31 @@ namespace DePvr
             }
 
             var fullPath = Path.GetFullPath(path);
-            var pointer = DeEtc.LoadPvr(path);
+            var pointer = DeEtc.LoadPvrFromFile(path);
             var pvr = new Pvr(pointer);
 
             return pvr;
+        }
+
+        public static Pvr LoadFromBytes(byte[] bytes)
+        {
+            var length = bytes.Length;
+            var srcPointer = Marshal.AllocHGlobal(length);
+            Marshal.Copy(bytes, 0, srcPointer, length);
+
+            var pointer = DeEtc.LoadPvrFromMemory(srcPointer);
+            var pvr = new Pvr(pointer);
+
+            return pvr;
+        }
+
+        public static Pvr LoadFromStream(Stream stream)
+        {
+            using (var memory = new MemoryStream())
+            {
+                memory.CopyTo(stream);
+                return LoadFromBytes(memory.ToArray());
+            }
         }
 
         public bool FlipVertical()
