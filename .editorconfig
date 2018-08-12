@@ -37,7 +37,7 @@ csharp_style_deconstructed_variable_declaration = true:warning
 csharp_style_expression_bodied_accessors = when_on_single_line:warning
 csharp_style_expression_bodied_constructors = false:warning
 csharp_style_expression_bodied_indexers = when_on_single_line:warning
-csharp_style_expression_bodied_methods = true:warning
+csharp_style_expression_bodied_methods = false:warning
 csharp_style_expression_bodied_operators = false:warning
 csharp_style_expression_bodied_properties = when_on_single_line:warning
 csharp_style_inlined_variable_declaration = true:warning
@@ -178,4 +178,4 @@ dotnet_naming_rule.methods_rule.style = pascal_style
 
 dotnet_naming_rule.parameters_rule.severity = warning
 dotnet_naming_rule.parameters_rule.symbols = parameters
-dotnet_naming_rule.parameters_rule.style = pascal_style
+dotnet_naming_rule.parameters_rule.style = camel_style
