@@ -6,14 +6,34 @@ using System.Runtime.InteropServices;
 
 namespace DePvr
 {
+    /// <summary>
+    /// A PVR texture manager.
+    /// </summary>
     public class Pvr : IDisposable
     {
+        /// <summary>
+        /// The pointer to the texture.
+        /// </summary>
         private IntPtr _pointer;
 
+        /// <summary>
+        /// Gets the width of the texture.
+        /// </summary>
         public uint Width => DeEtc.GetWidth(_pointer);
+
+        /// <summary>
+        /// Gets the height of the texture.
+        /// </summary>
         public uint Height => DeEtc.GetHeight(_pointer);
+
+        /// <summary>
+        /// Gets the size of the texture binary.
+        /// </summary>
         public uint DataSize => DeEtc.GetDataSize(_pointer);
 
+        /// <summary>
+        /// Gets the texture binary.
+        /// </summary>
         public byte[] Data
         {
             get
@@ -27,11 +47,20 @@ namespace DePvr
             }
         }
 
+        /// <summary>
+        /// Creates a new instance of the class.
+        /// </summary>
+        /// <param name="pointer">A pointer to the unmanaged texture.</param>
         private Pvr(IntPtr pointer)
         {
             _pointer = pointer;
         }
 
+        /// <summary>
+        /// Loads a texture from a file.
+        /// </summary>
+        /// <param name="path">The path of a file to load from.</param>
+        /// <returns>The loaded texture.</returns>
         public static Pvr LoadFromFile(string path)
         {
             if (!File.Exists(path))
@@ -46,6 +75,11 @@ namespace DePvr
             return pvr;
         }
 
+        /// <summary>
+        /// Loads a texture from a byte array.
+        /// </summary>
+        /// <param name="bytes">The byte array to load from.</param>
+        /// <returns>The loaded texture.</returns>
         public static Pvr LoadFromBytes(byte[] bytes)
         {
             var length = bytes.Length;
@@ -58,6 +92,11 @@ namespace DePvr
             return pvr;
         }
 
+        /// <summary>
+        /// Loads a texture from a stream.
+        /// </summary>
+        /// <param name="stream">The stream to load from.</param>
+        /// <returns>The loaded texture.</returns>
         public static Pvr LoadFromStream(Stream stream)
         {
             using (var memory = new MemoryStream())
@@ -67,16 +106,28 @@ namespace DePvr
             }
         }
 
+        /// <summary>
+        /// Flips the texture vertically.
+        /// </summary>
+        /// <returns>Whether it was flipped successfully.</returns>
         public bool FlipVertical()
         {
             return DeEtc.FlipVertical(_pointer);
         }
 
+        /// <summary>
+        /// Flips the texture horizontally.
+        /// </summary>
+        /// <returns>Whether it was flipped successfully.</returns>
         public bool FlipHorizontal()
         {
             return DeEtc.FlipHorizontal(_pointer);
         }
 
+        /// <summary>
+        /// Converts the texture to a Bitmap object.
+        /// </summary>
+        /// <returns>The converted object.</returns>
         public Bitmap ToBitmap()
         {
             var width = (int) Width;
@@ -101,11 +152,20 @@ namespace DePvr
             return bitmap;
         }
 
+        /// <summary>
+        /// Exports the texture to a file.
+        /// </summary>
+        /// <param name="path">The path of a file to export to.</param>
         public void Export(string path)
         {
             Export(path, ImageFormat.Png);
         }
 
+        /// <summary>
+        /// Exports the texture to a file with the specified format.
+        /// </summary>
+        /// <param name="path">The path of a file to export to.</param>
+        /// <param name="format">The image format to export with.</param>
         public void Export(string path, ImageFormat format)
         {
             using (var bitmap = ToBitmap())
@@ -114,6 +174,9 @@ namespace DePvr
             }
         }
 
+        /// <summary>
+        /// Frees the memory space used by the texture.
+        /// </summary>
         public void Dispose()
         {
             DeEtc.Dispose(_pointer);
