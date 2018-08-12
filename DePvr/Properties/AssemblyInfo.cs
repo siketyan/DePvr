@@ -1,7 +1,8 @@
-﻿using System.Reflection;
+using System.Reflection;
 using System.Runtime.InteropServices;
 
 [assembly: AssemblyTitle("DePvr")]
+[assembly: AssemblyDescription("Decodes PVR files with ETC1 or other encodings to PNG.")]
 [assembly: AssemblyCompany("Siketyan")]
 [assembly: AssemblyProduct("DePvr")]
 [assembly: AssemblyCopyright("Copyright © 2018 Siketyan")]
