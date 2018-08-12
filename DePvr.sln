@@ -14,6 +14,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 	ProjectSection(SolutionItems) = preProject
 		.editorconfig = .editorconfig
 		.gitignore = .gitignore
+		LICENSE_POWERVR_TOOLS.txt = LICENSE_POWERVR_TOOLS.txt
 	EndProjectSection
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "DeEtc", "DeEtc\DeEtc.vcxproj", "{6B036E70-9CCE-43E9-B8F0-F7F324334B67}"
