@@ -18,7 +18,5 @@ configuration: Release
 build:
   parallel: true
   project: DePvr.sln
-  publish_nuget: true
 artifacts:
   - path: DePvr\bin\$(platform)\$(configuration)
-  - path: *.nupkg
