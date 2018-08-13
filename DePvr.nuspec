@@ -22,12 +22,15 @@
   </metadata>
   <files>
     <file src="DePvr\bin\x86\Release\DePvr.dll" target="lib\net471" />
-    
+    <file src="DePvr\bin\x86\Release\DePvr.dll" target="build\x86" />
+    <file src="DePvr\bin\x86\Release\DePvr.dll" target="build\x64" />
+
     <file src="DePvr\bin\x86\Release\DePvr.Unmanaged.dll" target="runtimes\win-x86\native" />
-    <file src="DePvr\bin\x86\Release\PVRTexLib.dll" target="runtimes\win-x86\native" />
     <file src="DePvr\bin\x64\Release\DePvr.Unmanaged.dll" target="runtimes\win-x64\native" />
+    <file src="DePvr\bin\x86\Release\PVRTexLib.dll" target="runtimes\win-x86\native" />
     <file src="DePvr\bin\x64\Release\PVRTexLib.dll" target="runtimes\win-x64\native" />
-    
+
+    <file src="DePvr.props" target="build\net471" />
     <file src="LICENSE_POWERVR_TOOLS.txt" target="content" />
   </files>
 </package>
